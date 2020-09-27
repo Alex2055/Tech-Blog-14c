@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const Post = require('../models/Post');
 
-router.get('/', (req, res) => {
+
+
+router.get('/home', (req, res) => {
     Post.findAll({}).then(dbPostData => {
         // serialize data before passing to template
         const posts = dbPostData.map(post => post.get());
@@ -12,4 +14,16 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
 });
+
+router.get('/login', (req, res) => {
+    
+    res.render('../views/login.handlebars');
+})
+
+router.get('/signup', (req, res) => {
+
+    res.render('../views/signup.handlebars');
+})
+
+
 module.exports = router;

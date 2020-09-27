@@ -1,9 +1,9 @@
 <div class="post-body">
     <ul>
         {{#each posts}}
-        <div class="post-title">
+        <div class="post-title" onclick="location.href='/post/{{id}}';" style="cursor: pointer;">
             <h2 class="title-text">
-                {{title}}
+                  {{title}}  
             </h2>
         </div>
         <div class="post-body">
@@ -14,4 +14,8 @@
         <br>
         {{/each}}
     </ul>
+</div>
+
+<div>
+    {{comment_text}}
 </div>
